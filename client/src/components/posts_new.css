@@ -1,0 +1,25 @@
+.post-item {
+  background-color: #bdc3c7;
+  padding-bottom: 1px;
+}
+
+.post-item h2 {
+  margin-bottom: -10px;
+  text-align: center;
+}
+
+.post-item h4 {
+  margin-bottom: -30px;
+  text-align: left;
+  padding-left: 90px;
+}
+
+.post-item .btn {
+  background-color: rgb(0, 0, 75);
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border: 3px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+}
