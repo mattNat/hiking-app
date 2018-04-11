@@ -29,7 +29,6 @@ class PostsIndex extends Component {
     const coor = (Object.values(this.props.coordinates)[0]) || {};
     
     const myTrails = this.props.trails[0] || {};
-
     
     console.log('From post_index.js:', myTrails.trails);
 

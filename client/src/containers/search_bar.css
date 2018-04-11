@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 body{
+  /* display: inline; */
   background: #f2f2f2;
   font-family: 'Open Sans', sans-serif;
 }
@@ -8,8 +9,12 @@ body{
 .search {
   /* width: 100%; */
   width: 300px;
-  position: relative
+  /* position: relative */
 }
+
+/* .wrap {
+  display: inline;
+} */
 
 .searchTerm {
   float: left;
@@ -45,7 +50,9 @@ body{
 
   /* width: 30%; */
   position: absolute;
-  top: 335px;
+  /* position: relative;   */
+  /* top: 335px; */
+  top: 270px;
   /* left: 500px; */
   margin-left: auto;
   margin-right: auto;

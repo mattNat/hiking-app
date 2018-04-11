@@ -7,9 +7,10 @@ body {
   padding: 20px;
   max-width: 1600px;
   min-height: 800px;
-  width: 80%;
-  margin: 20px auto;
+  width: 90%;
+  margin: 20px;
   font-family: source sans pro;
+  
 }
 
 .list-group li {
@@ -87,11 +88,13 @@ hr {
 }
 
 .list-item {
-  display: inline;
+  display: inline-block;
   float: left;
   background-color: #bdc3c7;
-  margin-bottom: 20px;
-  width: 200px;
+  /* border: solid 2px black; */
+  margin-bottom: 25px;
+  /* margin-right: 20px; */
+  /* width: 100px; */
   /* padding: 5px; */
 }
 
