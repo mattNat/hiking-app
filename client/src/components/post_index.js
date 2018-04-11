@@ -83,7 +83,7 @@ class PostsIndex extends Component {
 
         // NEW
         <div key={trail.id.toString()} className='row' >
-          <div className='list-item'>
+          <div className='list-item col-6 col-s-6'>
             <img className='portrait' src= {trail.imgSmallMed}  alt={trail.name} width='300px' /> <br/>
 
             
@@ -124,7 +124,7 @@ class PostsIndex extends Component {
     // will console log twice
     // console.log(this.props.posts);
     return (
-      <div>
+      <div className='search-box' >
         <Sidebar />
         <div className='search-results'>
             <h3>
