@@ -39,7 +39,7 @@ export function Landing() {
 							<a >Your</a>
 						</div>
 						<a >
-							<img src="https://cdn.kimkim.com/files/a/content_articles/featured_photos/7a1e35ce237d78064a73e43f31c2d36897903ef3/big-7cb3c41e0671f4e79a3f9bae97d3490d.jpg" 
+							<img src="https://www.travelalaskaoutdoors.com/img/masthead/mountains.jpg" 
 							alt='Outdoor mountain two' width='650' height='325' />
 						</a>
 					</li>

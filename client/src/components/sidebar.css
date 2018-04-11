@@ -25,11 +25,11 @@ nav ul li {
   display: inline-block;
 }
 
+/* color: rgba(0, 35, 122, 0.5); */
 nav ul li a {
   padding: 18px;
   font-family: "Open Sans";
   text-transform:uppercase;
-  /* color: rgba(0, 35, 122, 0.5); */
   color: rgba(0, 0, 75, 0.7);
   font-size: 18px;
   text-decoration: none;
