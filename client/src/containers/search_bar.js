@@ -58,18 +58,6 @@ class SearchBar extends Component {
       <div className='wrap' >
         <div className='search' >
           <form onSubmit={this.onFormSubmit} className='input-group'>
-            {/* <input 
-              placeholder='Latitude'
-              className='form-control'
-              value={this.state.lat}
-              onChange={this.onInputChangeLat}
-            />
-            <input 
-              placeholder='Longitude'
-              className='form-control'
-              value={this.state.lon}
-              onChange={this.onInputChangeLon}
-            /> */}
             <input 
               placeholder='Address or location...'
               className='searchTerm'
