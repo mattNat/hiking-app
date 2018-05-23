@@ -4,8 +4,6 @@ import {Link} from 'react-router-dom';
 import './sidebar.css';
 
 export function Sidebar() {
-  // const folderId = props.match.params.folderId;
-  // console.log(folderId);
     const folders = (
       <div>
         <li className="folder-menu-list-item">
