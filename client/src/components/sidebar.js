@@ -9,7 +9,10 @@ export function Sidebar() {
     const folders = (
       <div>
         <li className="folder-menu-list-item">
-            <Link to={`/homepage`}>Home</Link>
+            <Link to={`/`}>Home</Link>
+        </li>
+        <li className="folder-menu-list-item">
+            <Link to={`/homepage`}>Search Trails</Link>
         </li>
         <li className="folder-menu-list-item">
           <Link to={`/posts/new`}>Saved Trails</Link>

@@ -5,8 +5,6 @@ import {Link} from 'react-router-dom';
 import './landing.css';
 
 export function Landing() {
-  // const folderId = props.match.params.folderId;
-  // console.log(folderId);
     const folders = (
       <div>
         <li className="landing-menu-list-item">
@@ -29,7 +27,6 @@ export function Landing() {
 							<a >Find</a>
 						</div>
 						<a >
-							{/* <img src="http://thecodeplayer.com/uploads/media/3yiC6Yq.jpg"/>                 */}
 							<img src="https://adventurejunkies-theadventurejunk.netdna-ssl.com/wp-content/uploads/hiking-1.jpg" 
 							alt='Outdoor mountain one' width='650' height='325' />
 						</a>
@@ -61,14 +58,6 @@ export function Landing() {
 							alt='Outdoor mountain four' width='650' height='325' />
 						</a>
 					</li>
-					{/* <li>
-						<div class="image_title">
-							<a href="#">Cars 2</a>
-						</div>
-						<a href="#">
-							<img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
-						</a>
-					</li> */}
 				</ul>
 			</div>
         </div>
