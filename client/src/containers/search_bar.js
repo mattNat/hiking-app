@@ -6,9 +6,6 @@ import PlaceAutoComplete, { geocodeByAddress, getLatLng } from 'react-places-aut
 
 import './search_bar.css'
 
-/*
-set controlled state
-*/
 class SearchBar extends Component {
   constructor(props) {
     super(props)
