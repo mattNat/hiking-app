@@ -12,6 +12,8 @@ export default function Instructions() {
       <p>
         To begin searching for your favorite trails, navigate to the search web page by clicking on "SEARCH TRAILS" on the navigation bar.  
       </p>
+      <img src="" alt="search page"/>
+      <p></p>
     </div>
   );
 }

@@ -23,13 +23,8 @@ class PostsIndex extends Component {
 
   renderPosts() {
     const coor = (Object.values(this.props.coordinates)[0]) || {};
-    
-    const myTrails = this.props.trails[0] || {};
-    
-    console.log('From post_index.js:', myTrails.trails);
 
     return _.map(coor.trails, trail => {
-
       // default to this image if not provided by API
       if (trail.imgSmallMed === '') {
         trail.imgSmallMed = 'https://i.pinimg.com/originals/a4/b0/c4/a4b0c4fc44ec75c55d7d40a1d3994435.jpg';
