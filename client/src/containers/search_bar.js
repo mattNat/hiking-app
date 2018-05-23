@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCoordinates } from '../actions/index';
+import PlaceAutoComplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 import './search_bar.css'
 
@@ -17,23 +18,9 @@ class SearchBar extends Component {
     };
 
     // this (which is an instance of search bar)
-    // this.onInputChangeLat = this.onInputChangeLat.bind(this);
-    // this.onInputChangeLon = this.onInputChangeLon.bind(this);    
     this.onInputChange = this.onInputChange.bind(this);        
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
-
-  // event object is vanilla js thing
-  // this?  whenever we hand callback function
-  // onInputChangeLat(event) {
-  //   // this.setState (I don't have it)
-  //   this.setState({lat: event.target.value});
-  // }
-
-  // onInputChangeLon(event) {
-  //   // this.setState (I don't have it)
-  //   this.setState({lon: event.target.value});
-  // }
 
   onInputChange(event) {
     // this.setState (I don't have it)
@@ -57,6 +44,7 @@ class SearchBar extends Component {
     return (
       <div className='wrap' >
         <div className='search' >
+
           <form onSubmit={this.onFormSubmit} className='input-group'>
             <input 
               placeholder='Address or location...'
