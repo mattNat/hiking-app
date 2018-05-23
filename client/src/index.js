@@ -16,7 +16,7 @@ import PostsNew from './components/posts_new';
 import PostsShow from './components/posts_show';
 import Landing from './components/landing';
 
-// fetch_posts, 
+// fetch_posts, fetch_coordinates, fetch_trail, create_post
 const createStoreWithMiddleware = applyMiddleware(promise, logger)(createStore);
 
 ReactDOM.render(

@@ -27,18 +27,9 @@ class PostsIndex extends Component {
   }
 
   renderPosts() {
-    // const test = this.props.trails[0];
-    // if (!this.props.trails[0]) {
-    //   <div>loading...</div>
-    // } else {
-    //   const test= 
-    // }
     const myPosts = this.props.posts || {};
-    // console.log(this.props.trails[0]);
-    // console.log(this.state);
     
     console.log('From post_index.js:', myPosts);
-    // console.log(this.props.posts);
     
     return _.map(myPosts, post => {
       if (post.imgSmallMed === '') {
@@ -72,9 +63,6 @@ class PostsIndex extends Component {
             Hike Date: {post.date} <br/><br/>
             <button
               className='btn btn-danger'
-              // onClick={this.onDeleteClick(post.id)}
-              // onClick={() => this.props.deletePost(post.id, () => {
-              //   this.props.history.push('/posts/new');
               onClick={() => this.onDeleteClick(post.id)}
             >
             Delete Post
@@ -112,17 +100,13 @@ class PostsIndex extends Component {
   
 
   render() {
-    // will console log twice
-    // console.log(this.props.posts);
     return (
       <div>
         <Sidebar />
         <div className='content'>
           <h1>Saved Trails</h1>
           <div className='sub-content'>
-            {/* <ul className='list-group container'> */}
               {this.renderPosts()}
-            {/* </ul> */}
           </div>
         </div>
       </div>
@@ -138,7 +122,6 @@ function mapStateToProps({ posts }, ownProps) {
     post: posts[ownProps.match.params.id]
   };
 }
-
 
 // null - we are not passing mapsStateToProps
 // fetchPosts is identical to mapDispatchToProps
