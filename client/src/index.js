@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
+import logger from 'redux-logger';
 
 import './index.css';
 
@@ -15,7 +16,8 @@ import PostsNew from './components/posts_new';
 import PostsShow from './components/posts_show';
 import Landing from './components/landing';
 
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+// fetch_posts, 
+const createStoreWithMiddleware = applyMiddleware(promise, logger)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(
