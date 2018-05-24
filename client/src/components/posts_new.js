@@ -38,20 +38,22 @@ class PostsIndex extends Component {
 
       let name = null;
 
-      if (post.difficulty === 'green') {
-        name = 'Very Easy';
-      } else if (post.difficulty === 'greenBlue') {
-        name = 'Easy';
-      } else if (post.difficulty === 'blue') {
-        name = 'Intermediate';
-      } else if (post.difficulty === 'blueBlack') {
-        name = 'Challenging';
-      } else if (post.difficulty === 'black') {
-        name = 'Very Challenging';
-      } else if (post.difficulty === 'dblack') {
-        name = 'Extremely Challenging';
-      } else {
-        name = 'Not Provided'
+      // associate color scheme with trail difficulty
+      switch (post.difficulty) {
+        case 'green':
+          name = 'Very Easy'; break;
+        case 'greenBlue':
+          name = 'Easy'; break;
+        case 'blue':
+          name = 'Intermediate'; break;
+        case 'blueBlack':
+          name = 'Challenging'; break;
+        case 'black':
+          name = 'Very Challenging'; break;
+        case 'dblack':
+          name = 'Extremely Challenging'; break;
+        default:
+          name = 'Not Provided';
       }
 
       return (
@@ -69,12 +71,14 @@ class PostsIndex extends Component {
             </button>
           </h4>
           <div className="container">
-            <img src={post.imgSmallMed} alt={post.name} />
+              <img src={post.imgSmallMed} 
+              alt={post.name} 
+            />
             <div className="text_box">
               {/* <h1> image hover effect</h1> */}
               <p>
                 <b>Location:</b> {post.location} <br/>
-              <b>Lat/Long:</b> {post.latitude}, {post.longitude} <br/>       
+                <b>Lat/Long:</b> {post.latitude}, {post.longitude} <br/>       
                 <b>Length (round-trip):</b> {post.length} mi<br/>
                 <b>Ascent:</b> {post.ascent} ft<br/>
                 <b>Condition:</b> {post.conditionStatus} <br/>
@@ -83,7 +87,6 @@ class PostsIndex extends Component {
               </p>
               <span className='top' >
                 <ReactStars 
-                  // count={5}
                   value={post.stars}
                   size={24}
                   color2={'#ffd700'}

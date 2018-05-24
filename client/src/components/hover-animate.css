@@ -12,8 +12,11 @@
 }
 
 .container {
-  height: 250px;
-  width: 400px;
+  /* height: 250px;
+  width: 400px; */
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   background: #000;
   overflow: hidden;
   font-family: "JF Flat";
