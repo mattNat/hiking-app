@@ -46,8 +46,6 @@ class SearchBar extends Component {
       input: {
         width: "100%",
         paddingTop: "20px",
-        // fontSize: "30px",
-        // backgroundColor: "green",
         textAlign: "center",
       }
     }
@@ -59,10 +57,6 @@ class SearchBar extends Component {
             value={this.state.address}
             onChange={this.handleChange}
             onSelect={this.handleSelect}
-            // classNames={{
-            //   input: 'search-input',
-            //   autocompleteContainer: 'search-autocomplete-container',
-            // }}
           >
             {({ getInputProps, suggestions, getSuggestionItemProps }) => (
               <div style={styles.input}>
@@ -75,7 +69,7 @@ class SearchBar extends Component {
                 <div className="autocomplete-dropdown-container">
                   {suggestions.map(suggestion => {
                     const className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item';
-                    // inline style for demonstration purpose
+                    // inline style
                     const style = suggestion.active
                                 ? { 
                                     backgroundColor: '#fafafa', 
