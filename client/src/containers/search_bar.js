@@ -34,16 +34,38 @@ class SearchBar extends Component {
   }
 
   render() {
+    const styles = {
+      search: {
+        marginTop: "0",
+        width: "100%",
+        height: "250px",
+        backgroundSize: "cover",
+        backgroundPosition: "top",
+        backgroundImage: `url(https://www.banfftours.com/wp-content/uploads/2017/01/Hiking-Lake-Louise-5.jpg)`
+      },
+      input: {
+        width: "100%",
+        paddingTop: "20px",
+        // fontSize: "30px",
+        // backgroundColor: "green",
+        textAlign: "center",
+      }
+    }
+
     return (
       <div className='wrap' >
-        <div className='search' >
+        <div className='search' style={styles.search}>
           <PlaceAutoComplete
             value={this.state.address}
             onChange={this.handleChange}
             onSelect={this.handleSelect}
+            // classNames={{
+            //   input: 'search-input',
+            //   autocompleteContainer: 'search-autocomplete-container',
+            // }}
           >
             {({ getInputProps, suggestions, getSuggestionItemProps }) => (
-              <div>
+              <div style={styles.input}>
                 <input
                   {...getInputProps({
                     placeholder: 'Search Places ...',
@@ -55,8 +77,14 @@ class SearchBar extends Component {
                     const className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item';
                     // inline style for demonstration purpose
                     const style = suggestion.active
-                                ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                                : { backgroundColor: '#ffffff', cursor: 'pointer' };
+                                ? { 
+                                    backgroundColor: '#fafafa', 
+                                    cursor: 'pointer', 
+                                  }
+                                : { 
+                                    backgroundColor: '#ffffff', 
+                                    cursor: 'pointer',
+                                  };
                     return (
                       <div {...getSuggestionItemProps(suggestion, { className, style })}>
                         <span>{suggestion.description}</span>
@@ -64,6 +92,7 @@ class SearchBar extends Component {
                     )
                   })}
                 </div>
+                <div className='trail-instruction'><h4>Input location to find a hiking trail</h4></div>
               </div>
             )}
           </PlaceAutoComplete>
