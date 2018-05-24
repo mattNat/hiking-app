@@ -12,7 +12,6 @@ const GEO_ROOT_URL = 'https://maps.googleapis.com/maps/api/geocode/json?address=
 const GEO_KEY = '&key=AIzaSyATySdNMMYE-uv4PmUb3RqYgDcHCARsvMQ';
 
 export const FETCH_POSTS = 'FETCH_POSTS';
-export const FETCH_POST = 'FETCH_POST';
 export const FETCH_TRAILS = 'FETCH_TRAILS';
 export const CREATE_POST = 'CREATE_POST';
 export const FETCH_TRAIL = 'FETCH_TRAIL';
@@ -22,13 +21,7 @@ export const DELETE_POST = 'DELETE_POST';
 
 
 export function fetchPosts() {
-  // const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
   const request = axios.get(`${ROOT_URL}/notes`);
-
-  // posting add fields that didn't exist
-  // posting use different way than axios
-  // use nodejs for posting
-  
 
   return {
     type: FETCH_POSTS,
@@ -37,10 +30,6 @@ export function fetchPosts() {
 }
 
 export function fetchTrails(lat, lon) {
-  // const lat = '40.0274';
-  // const lon = '-105.2519';
-  // const lat = '37.8651';
-  // const lon = '-119.5383';
   const url = `${API_ROOT_URL}lat=${lat}&lon=${lon}&maxDistance=10${API_KEY}`;
   const request = axios.get(url);
   return {
@@ -72,7 +61,6 @@ export function fetchTrail(id) {
 
 export function fetchCoordinates(address) {
   const url = `${GEO_ROOT_URL}${address}${GEO_KEY}`;
-  // const url = `${GEO_ROOT_URL}yosemite${GEO_KEY}`;
   
   // OPTION 2
   const request = axios.get(url)
@@ -81,40 +69,8 @@ export function fetchCoordinates(address) {
       const lngCoor = (coor.data.results[0].geometry.location.lng);
       
       const trail_url = `${API_ROOT_URL}lat=${latCoor}&lon=${lngCoor}&maxDistance=10${API_KEY}`;
-      // console.log(trail_url);
       return axios.get(trail_url);
     });
-
-  // console.log(request);
-  
-  // For google maps api integration
-  // const getCoor = axios.get(url)
-  //   .then(coor => {
-  //     const latCoor = (coor.data.results[0].geometry.location.lat);
-  //     const lngCoor = (coor.data.results[0].geometry.location.lng);
-
-  //     return coor.data.results[0].geometry.location;
-  //   })
-
-
-  // console.log(getCoor);
-  
-  
-  // const requestTrail = a
-  
-  // const request = axios.get(url);
-  // // OPTION 2
-  // // return axios.get(url);
-  // const request = axios.get(url);
-  // // console.log(request);
-  // if (request) {
-  //   // const { data } = ((request));
-  //   console.log((request.data));
-  // }
-    
-  // // .then(function (response) {
-  // //   this.setState({address: response.data.results});
-  // // });
 
   return {
     type: FETCH_COORDINATES,
@@ -129,14 +85,5 @@ export function deletePost(id, callback) {
   return {
     type: DELETE_POST,
     payload: id
-  }
-}
-
-export function fetchPost(id) {
-  const url = `${ROOT_URL}/notes/${id}`;
-  const request = axios.get(url);
-  return {
-    type: FETCH_POST,
-    payload: request
   }
 }

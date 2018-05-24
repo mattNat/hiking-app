@@ -4,12 +4,13 @@ import {Link} from 'react-router-dom';
 import './sidebar.css';
 
 export function Sidebar() {
-  // const folderId = props.match.params.folderId;
-  // console.log(folderId);
     const folders = (
       <div>
         <li className="folder-menu-list-item">
-            <Link to={`/homepage`}>Home</Link>
+            <Link to={`/`}>Home</Link>
+        </li>
+        <li className="folder-menu-list-item">
+            <Link to={`/homepage`}>Search Trails</Link>
         </li>
         <li className="folder-menu-list-item">
           <Link to={`/posts/new`}>Saved Trails</Link>

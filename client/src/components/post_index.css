@@ -1,6 +1,3 @@
-/* @import "compass/css3"; */
-/* @import "compass/css3/animation" */
-
 body {
   display: inline-block;
   border: 20px solid  rgb(0, 0, 75);
@@ -10,26 +7,20 @@ body {
   width: 90%;
   margin: 20px;
   font-family: source sans pro;
-  
 }
 
 .list-group li {
   display: inline-block;
-  /* border-left-style: 5px solid #bdc3c7; */
-  /* padding-left: 5px; */
   margin-bottom: 3px;
 }
 
 .search-results {
-  /* background-color: green; */
   margin: 20px 10px;
 }
 
 .portrait {
-  /* float:left; */
   width:200px;
   height:200px;
-  /* overflow:hidden;   */
   margin-top: 30px;
   margin-bottom: 20px;
   border: 5px solid black;
@@ -38,7 +29,6 @@ body {
 
 .portrait img {
   width:200px;    
-  /* height: 200px;   */
 }
 
 .row {
@@ -53,18 +43,6 @@ body {
   display: inline-block;
 }
 
-/* .diff-img {
-  display: inline-block;
-  
-} */
-
-/* .search-results h3 {
-  color: rgb(0, 0, 75);
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  text-align: center;
-  background-color: #bdc3c7;
-} */
 .search-results h3 {
   /* margin-top: 5%; */
   font-size: 3rem;
@@ -73,11 +51,6 @@ body {
   /* display: inline-block; */
   
 }
-
-/* .search-results h3:first-letter {
-  color: black;
-  font-size: 50px;
-} */
 
 hr {
   border: 0;
@@ -91,11 +64,7 @@ hr {
   display: inline-block;
   float: left;
   background-color: #bdc3c7;
-  /* border: solid 2px black; */
   margin-bottom: 25px;
-  /* margin-right: 20px; */
-  /* width: 100px; */
-  /* padding: 5px; */
 }
 
 .list-item:hover {
@@ -124,105 +93,6 @@ hr {
 .wrapper {
   margin-left: -30px;
 }
-
-/* hr {
-  height: 30px;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px 0 0 0;
-  border-radius: 20px;
-}
-
-hr:before {
-  display: block;
-  content: "";
-  height: 30px;
-  border-style: solid;
-  border-color: black;
-  border-width: 0 0 1px 0;
-  border-radius: 20px;
-} */
-
-/* .wrapper{
-  width:600px;
-}
-.itemHolder{
-  margin:0;
-  padding:0;
-}
-
-.itemHolder li{
-  float:left;
-  margin-bottom:10px;
-}
-
-.itemHolder li div{
-  width:200px;
-} */
-
-/* height: 1200px; your fixed height */
-/*3 in those rules is just placeholder -- can be anything*/
-
-/* BEFORE MEDIA ONLY ADDITION */
-/* .itemHolder {
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2; 
-  margin-top: 20px;
-  padding-left: 30px;
-} */
-
-/*display:inline-block necessary*/
-/* .itemHolder li {
-  display: inline-block; 
-  height: 500px;
-  width: 200px;
-  padding-left: 0px;
-  margin-top: 30px;  
-  font-size: 15px; 
-} */
-
-/* .list-item {
-  margin-bottom: 30px;
-} */
-
-/* This applies from 600px onwards
-@media (min-width: 800px) {
-  float: left;
-  width: 60%;
-} */
-
-/* .search-results {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* Mobile Styles */
-/* red */
-/* @media only screen and (max-width: 400px) {
-  body {
-    background-color: #F09A9D;
-  }
-} */
-
-/* Yellow */
-/* Tablet Styles */
-/* @media only screen and (min-width: 401px) and (max-width: 960px) {
-  body {
-    background-color: #F5CF8E; 
-  }
-} */
-
- /* Blue */
-/* Desktop Styles */
-/* @media only screen and (min-width: 961px) {
-  body {
-    background-color: #B2D6FF;
-  }
-} */
 
 /* For mobile phones: */
 [class*="col-"] {

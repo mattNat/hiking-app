@@ -27,18 +27,9 @@ class PostsIndex extends Component {
   }
 
   renderPosts() {
-    // const test = this.props.trails[0];
-    // if (!this.props.trails[0]) {
-    //   <div>loading...</div>
-    // } else {
-    //   const test= 
-    // }
     const myPosts = this.props.posts || {};
-    // console.log(this.props.trails[0]);
-    // console.log(this.state);
     
     console.log('From post_index.js:', myPosts);
-    // console.log(this.props.posts);
     
     return _.map(myPosts, post => {
       if (post.imgSmallMed === '') {
@@ -47,20 +38,22 @@ class PostsIndex extends Component {
 
       let name = null;
 
-      if (post.difficulty === 'green') {
-        name = 'Very Easy';
-      } else if (post.difficulty === 'greenBlue') {
-        name = 'Easy';
-      } else if (post.difficulty === 'blue') {
-        name = 'Intermediate';
-      } else if (post.difficulty === 'blueBlack') {
-        name = 'Challenging';
-      } else if (post.difficulty === 'black') {
-        name = 'Very Challenging';
-      } else if (post.difficulty === 'dblack') {
-        name = 'Extremely Challenging';
-      } else {
-        name = 'Not Provided'
+      // associate color scheme with trail difficulty
+      switch (post.difficulty) {
+        case 'green':
+          name = 'Very Easy'; break;
+        case 'greenBlue':
+          name = 'Easy'; break;
+        case 'blue':
+          name = 'Intermediate'; break;
+        case 'blueBlack':
+          name = 'Challenging'; break;
+        case 'black':
+          name = 'Very Challenging'; break;
+        case 'dblack':
+          name = 'Extremely Challenging'; break;
+        default:
+          name = 'Not Provided';
       }
 
       return (
@@ -72,21 +65,20 @@ class PostsIndex extends Component {
             Hike Date: {post.date} <br/><br/>
             <button
               className='btn btn-danger'
-              // onClick={this.onDeleteClick(post.id)}
-              // onClick={() => this.props.deletePost(post.id, () => {
-              //   this.props.history.push('/posts/new');
               onClick={() => this.onDeleteClick(post.id)}
             >
             Delete Post
             </button>
           </h4>
           <div className="container">
-            <img src={post.imgSmallMed} alt={post.name} />
+              <img src={post.imgSmallMed} 
+              alt={post.name} 
+            />
             <div className="text_box">
               {/* <h1> image hover effect</h1> */}
               <p>
                 <b>Location:</b> {post.location} <br/>
-              <b>Lat/Long:</b> {post.latitude}, {post.longitude} <br/>       
+                <b>Lat/Long:</b> {post.latitude}, {post.longitude} <br/>       
                 <b>Length (round-trip):</b> {post.length} mi<br/>
                 <b>Ascent:</b> {post.ascent} ft<br/>
                 <b>Condition:</b> {post.conditionStatus} <br/>
@@ -95,7 +87,6 @@ class PostsIndex extends Component {
               </p>
               <span className='top' >
                 <ReactStars 
-                  // count={5}
                   value={post.stars}
                   size={24}
                   color2={'#ffd700'}
@@ -112,17 +103,13 @@ class PostsIndex extends Component {
   
 
   render() {
-    // will console log twice
-    // console.log(this.props.posts);
     return (
       <div>
         <Sidebar />
         <div className='content'>
           <h1>Saved Trails</h1>
           <div className='sub-content'>
-            {/* <ul className='list-group container'> */}
               {this.renderPosts()}
-            {/* </ul> */}
           </div>
         </div>
       </div>
@@ -138,7 +125,6 @@ function mapStateToProps({ posts }, ownProps) {
     post: posts[ownProps.match.params.id]
   };
 }
-
 
 // null - we are not passing mapsStateToProps
 // fetchPosts is identical to mapDispatchToProps

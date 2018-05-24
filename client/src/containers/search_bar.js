@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchCoordinates } from '../actions/index';
+import PlaceAutoComplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 
 import './search_bar.css'
 
-/*
-set controlled state
-*/
 class SearchBar extends Component {
   constructor(props) {
     super(props)
@@ -15,61 +13,83 @@ class SearchBar extends Component {
     this.state = {
       address: ''
     };
-
-    // this (which is an instance of search bar)
-    // this.onInputChangeLat = this.onInputChangeLat.bind(this);
-    // this.onInputChangeLon = this.onInputChangeLon.bind(this);    
-    this.onInputChange = this.onInputChange.bind(this);        
-    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  // event object is vanilla js thing
-  // this?  whenever we hand callback function
-  // onInputChangeLat(event) {
-  //   // this.setState (I don't have it)
-  //   this.setState({lat: event.target.value});
-  // }
-
-  // onInputChangeLon(event) {
-  //   // this.setState (I don't have it)
-  //   this.setState({lon: event.target.value});
-  // }
-
-  onInputChange(event) {
-    // this.setState (I don't have it)
-    this.setState({address: event.target.value});
+  // Google autocomplete functions
+  handleChange = (address) => {
+    this.setState({ address })
   }
 
-
-  onFormSubmit(event) {
-    event.preventDefault();
-
-    // // We need to go and fetch weather data
-    // this.props.fetchTrails(this.state.lat, this.state.lon);
-
-    // We need to go and fetch coordinates data
-    this.props.fetchCoordinates(this.state.address);
-    // clear search input, will pass it to value in input
-    // this.setState({ address: '' });
+  handleSelect = (address) => {
+    console.log('handleSelect', address);
+    
+    geocodeByAddress(address)
+      .then(results => {
+        getLatLng(results[0]);
+        console.log(results[0].formatted_address);
+        this.props.fetchCoordinates(results[0].formatted_address);
+      })
+      .then(latLng => {console.log('Success', latLng)})
+      .catch(error => console.error('Error', error))
   }
 
   render() {
+    const styles = {
+      search: {
+        marginTop: "0",
+        width: "100%",
+        height: "250px",
+        backgroundSize: "cover",
+        backgroundPosition: "top",
+        backgroundImage: `url(https://www.banfftours.com/wp-content/uploads/2017/01/Hiking-Lake-Louise-5.jpg)`
+      },
+      input: {
+        width: "100%",
+        paddingTop: "20px",
+        textAlign: "center",
+      }
+    }
+
     return (
       <div className='wrap' >
-        <div className='search' >
-          <form onSubmit={this.onFormSubmit} className='input-group'>
-            <input 
-              placeholder='Address or location...'
-              className='searchTerm'
-              value={this.state.address}
-              onChange={this.onInputChange}
-            />
-            <span className='input-group-btn'>
-              <button type='submit' className='searchButton'>
-                <i className="fa fa-search"></i>
-              </button>
-            </span>
-          </form>
+        <div className='search' style={styles.search}>
+          <PlaceAutoComplete
+            value={this.state.address}
+            onChange={this.handleChange}
+            onSelect={this.handleSelect}
+          >
+            {({ getInputProps, suggestions, getSuggestionItemProps }) => (
+              <div style={styles.input}>
+                <input
+                  {...getInputProps({
+                    placeholder: 'Search Places ...',
+                    className: 'location-search-input',
+                  })}
+                />
+                <div className="autocomplete-dropdown-container">
+                  {suggestions.map(suggestion => {
+                    const className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item';
+                    // inline style
+                    const style = suggestion.active
+                                ? { 
+                                    backgroundColor: '#fafafa', 
+                                    cursor: 'pointer', 
+                                  }
+                                : { 
+                                    backgroundColor: '#ffffff', 
+                                    cursor: 'pointer',
+                                  };
+                    return (
+                      <div {...getSuggestionItemProps(suggestion, { className, style })}>
+                        <span>{suggestion.description}</span>
+                      </div>
+                    )
+                  })}
+                </div>
+                <div className='trail-instruction'><h4>Input location to find a hiking trail</h4></div>
+              </div>
+            )}
+          </PlaceAutoComplete>
         </div>
       </div>
     )
