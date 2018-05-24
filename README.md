@@ -1,36 +1,33 @@
-## React Capstone project by Matt San Pedro
-Title: Find Your Next Adventure...
+# Hiking Friend: React Capstone Project
+By, Matt San Pedro
 
 Purpose: Find hiking trails by entering an address, location, or national park name.  
-  Register a hiking trail with group/individual name(s) for future reference.
+Register a hiking trail with group/individual name(s) for future reference.
 
 Link to deployed version: 
 http://gracious-bose-61bbb2.netlify.com
 
 Tech stack:
--ReactJS
+-React.js
 -Redux
 -MongoDB
 -Express.js
 -Node.js
 
 # Landing Page
-![Landing Page](https://raw.githubusercontent.com/mattNat/hiking-client/master/images/001-landing.png)
+![Landing Page](https://raw.githubusercontent.com/mattNat/hiking-client/master/src/img/landing.png)
 
-An accordian styled set of images appear.
-User can hover over an image in the accordian and image will zoom in.
-The link above titled "Search for your next trail" will take user to home page.
+Contains detailed instructions on how to navigate and use the app.  A navigation bar is available.
 
-# Home Page
-![Home Page](https://raw.githubusercontent.com/mattNat/hiking-client/master/images/002-homepage.png)
+# Search Page
+![Search Page](https://raw.githubusercontent.com/mattNat/hiking-client/master/src/img/searchReadme.png)
 
-The nav bar appears with links to the home page and saved trails page.
 Below "Find your next adventure", you can search by address, city, or national park.
-Submit the search by clicking on icon or pressing enter and 10 trails will populate.
+Submit the search by clicking a place from the drop down menu.
 Clicking on "Save Trail" button will take you to the save form.
 
 # Register Trail Page
-![Registration Form](https://raw.githubusercontent.com/mattNat/hiking-client/master/images/003-saveForm.png)
+![Registration Form](https://raw.githubusercontent.com/mattNat/hiking-client/master/src/img/saveTrail.png)
 
 Enter in user name, comment, and date when the hike is planned.
 In addition, there are trail details that appear below.
@@ -38,7 +35,7 @@ Click "Save" to save the inputs and trail information to the database.
 Click "Cancel" to return to the home screen.
 
 # Saved Trails Page
-![Saved Trails](https://raw.githubusercontent.com/mattNat/hiking-client/master/images/004-savedTrails.png)
+![Saved Trails](https://raw.githubusercontent.com/mattNat/hiking-client/master/src/img/postImage.png)
 
 Page is accessed through the nav bar by clicking "Saved Trails."
 On the very top is the trail name and user inputs immediately below.
