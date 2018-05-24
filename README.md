@@ -8,7 +8,7 @@ Link to deployed version:
 https://hiking-friend.netlify.com/
 
 Link to source code:
-
+https://github.com/mattNat/hiking-app
 
 Tech stack:
 -React.js
