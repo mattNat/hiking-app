@@ -16,7 +16,6 @@ class PostsIndex extends Component {
   // ideal for data loading
   componentDidMount() {
     if (!this.props.fetchCoordinates) {
-      // feed lines below
       this.props.fetchCoordinates();
     }
   }

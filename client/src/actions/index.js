@@ -18,8 +18,6 @@ export const FETCH_TRAIL = 'FETCH_TRAIL';
 export const FETCH_COORDINATES = 'FETCH_COORDINATES';
 export const DELETE_POST = 'DELETE_POST';
 
-
-
 export function fetchPosts() {
   const request = axios.get(`${ROOT_URL}/notes`);
 
