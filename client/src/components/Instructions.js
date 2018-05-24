@@ -11,13 +11,14 @@ import PostDetail from '../img/postDetail.png';
 export default function Instructions() {
   return (
     <div className='instructions'>
-      <h1>Hiking Friend</h1>
+      <h1>HIKING FRIEND</h1>
       <h2>Core Functionality</h2>
       <p>
         Hiking Friend is a searching app for hiking trails.  It's core feature includes Google Geolocation and Hiking Project APIs to return 10 popular trails.  After this search, the user is free to store trails for future reference.
       </p>
-      <h2>Instructions</h2>
+      <h1>Instructions</h1>
       <img className='col-12 col-s-12' src={SearchPage} alt='search page'/>
+      <h2>Searching for trails</h2>
       <p>
         To begin searching for your favorite trails, navigate to the search web page by clicking on "SEARCH TRAILS" on the navigation bar.  
         <br/><br/>
@@ -26,6 +27,7 @@ export default function Instructions() {
       <p>
       <img className='col-12 col-s-12' src={Trails} alt='return ten trails'/>      
       </p>
+      <h2>Saving trails for prospective hikers</h2>
       <p>
         To save a trail for future reference, click on the "Save Trail" button. This will redirect you to a page containing a form and additional trail details.  
       </p>
@@ -35,7 +37,8 @@ export default function Instructions() {
         <br/><br/>
         To access the saved trails, click on "SAVED TRAILS" on the navigation bar.  
       </p>
-      <img className='col-3 col-s-3' src={PostImage} alt='post image'/>       
+      <h2>Saved trail posts</h2>
+      <img className='col-3 col-s-3' src={PostImage} alt='post entry'/>
       <p>
         Hovering or clicking on the image on the post will show additional trail detail.
       </p>
