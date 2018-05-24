@@ -5,7 +5,10 @@ Purpose: Find hiking trails by entering an address, location, or national park n
 Register a hiking trail with group/individual name(s) for future reference.
 
 Link to deployed version: 
-http://gracious-bose-61bbb2.netlify.com
+https://hiking-friend.netlify.com/
+
+Link to source code:
+
 
 Tech stack:
 -React.js
