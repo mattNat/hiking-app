@@ -12,7 +12,6 @@ const GEO_ROOT_URL = 'https://maps.googleapis.com/maps/api/geocode/json?address=
 const GEO_KEY = '&key=AIzaSyATySdNMMYE-uv4PmUb3RqYgDcHCARsvMQ';
 
 export const FETCH_POSTS = 'FETCH_POSTS';
-export const FETCH_POST = 'FETCH_POST';
 export const FETCH_TRAILS = 'FETCH_TRAILS';
 export const CREATE_POST = 'CREATE_POST';
 export const FETCH_TRAIL = 'FETCH_TRAIL';
@@ -86,14 +85,5 @@ export function deletePost(id, callback) {
   return {
     type: DELETE_POST,
     payload: id
-  }
-}
-
-export function fetchPost(id) {
-  const url = `${ROOT_URL}/notes/${id}`;
-  const request = axios.get(url);
-  return {
-    type: FETCH_POST,
-    payload: request
   }
 }
