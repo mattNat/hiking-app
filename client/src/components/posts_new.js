@@ -75,7 +75,6 @@ class PostsIndex extends Component {
               alt={post.name} 
             />
             <div className="text_box">
-              {/* <h1> image hover effect</h1> */}
               <p>
                 <b>Location:</b> {post.location} <br/>
                 <b>Lat/Long:</b> {post.latitude}, {post.longitude} <br/>       
@@ -83,7 +82,6 @@ class PostsIndex extends Component {
                 <b>Ascent:</b> {post.ascent} ft<br/>
                 <b>Condition:</b> {post.conditionStatus} <br/>
                 <b>Difficulty:</b> {`${name}`}
-                {/* (<img className='diff-img' src={`${imgLink}`}  alt={`${name}`} width='20px' />) <br/> */}
               </p>
               <span className='top' >
                 <ReactStars 
