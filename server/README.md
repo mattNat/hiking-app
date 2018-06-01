@@ -1,3 +1,50 @@
+# Hiking Friend: React Capstone Project
+By, Matt San Pedro
+
+Purpose: Find hiking trails by entering an address, location, or national park name.  
+Register a hiking trail with group/individual name(s) for future reference.
+
+Link to deployed version: 
+https://hiking-friend.netlify.com/
+
+Link to source code:
+https://github.com/mattNat/hiking-app
+
+Tech stack:
+-React.js
+-Redux
+-MongoDB
+-Express.js
+-Node.js
+
+# Landing Page
+![Landing Page](https://raw.githubusercontent.com/mattNat/hiking-client/master/src/img/landing.png)
+
+Contains detailed instructions on how to navigate and use the app.  A navigation bar is available.
+
+# Search Page
+![Search Page](https://raw.githubusercontent.com/mattNat/hiking-client/master/src/img/searchReadme.png)
+
+Below "Find your next adventure", you can search by address, city, or national park.
+Submit the search by clicking a place from the drop down menu.
+Clicking on "Save Trail" button will take you to the save form.
+
+# Register Trail Page
+![Registration Form](https://raw.githubusercontent.com/mattNat/hiking-client/master/src/img/saveTrail.png)
+
+Enter in user name, comment, and date when the hike is planned.
+In addition, there are trail details that appear below.
+Click "Save" to save the inputs and trail information to the database.
+Click "Cancel" to return to the home screen.
+
+# Saved Trails Page
+![Saved Trails](https://raw.githubusercontent.com/mattNat/hiking-client/master/src/img/postImage.png)
+
+Page is accessed through the nav bar by clicking "Saved Trails."
+On the very top is the trail name and user inputs immediately below.
+The "Delete Post" button deletes the post and refreshes the page.
+Hovering over the image shows details of the hike.
+
 # Thinkful Backend Template
 
 A template for developing and deploying Node.js apps.
